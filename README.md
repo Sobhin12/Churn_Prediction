@@ -52,7 +52,7 @@ src/
   survival.py      # Cox Proportional Hazards model
   pipeline.py      # runnable end-to-end script
 analysis.ipynb      # EDA and reporting notebook; imports from src/
-data/               # place Churn_Modelling.csv here (git-ignored)
+data/               # place Customer-Churn-Records.csv here (git-ignored)
 requirements.txt    # all dependencies
 ```
 
@@ -60,7 +60,7 @@ Reusable logic lives in `src/`; `analysis.ipynb` is the exploratory/reporting
 layer that calls into it. Run the classifiers end-to-end with:
 
 ```
-python -m src.pipeline --data-path data/Churn_Modelling.csv
+python -m src.pipeline --data-path data/Customer-Churn-Records.csv
 ```
 
 **Note:** the Cox model uses `Tenure` as the survival duration — this must
