@@ -40,3 +40,29 @@ This project focuses on predicting **customer churn** using machine learning and
 * Incorporate **deep learning survival models** (DeepSurv, RNN-based time-to-event models).
 * Extend explainability with **counterfactual churn analysis**.
 * Deploy as a **churn prediction API** for real-time business applications.
+
+## 📁 Project Structure
+
+```
+src/
+  data.py         # load & clean the raw CSV
+  features.py     # encoding, train/test split, scaling
+  classifiers.py   # train/evaluate each classification model
+  explain.py       # SHAP explainability
+  survival.py      # Cox Proportional Hazards model
+  pipeline.py      # runnable end-to-end script
+analysis.ipynb      # EDA and reporting notebook; imports from src/
+data/               # place Churn_Modelling.csv here (git-ignored)
+requirements.txt    # all dependencies
+```
+
+Reusable logic lives in `src/`; `analysis.ipynb` is the exploratory/reporting
+layer that calls into it. Run the classifiers end-to-end with:
+
+```
+python -m src.pipeline --data-path data/Churn_Modelling.csv
+```
+
+**Note:** the Cox model uses `Tenure` as the survival duration — this must
+stay in unscaled, real-world units (years), not the standardized features
+used for classification.
