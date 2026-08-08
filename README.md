@@ -34,13 +34,6 @@ This project focuses on predicting **customer churn** using machine learning and
 
   * SHAP analysis revealed top churn drivers (e.g., reduced engagement frequency, lower transactional activity, delayed payments).
 
-
-## 🔮 Future Work
-
-* Incorporate **deep learning survival models** (DeepSurv, RNN-based time-to-event models).
-* Extend explainability with **counterfactual churn analysis**.
-* Deploy as a **churn prediction API** for real-time business applications.
-
 ## 📁 Project Structure
 
 ```
